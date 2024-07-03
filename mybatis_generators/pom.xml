@@ -17,55 +17,52 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-
     <dependencies>
-
-        <!-- 通用的mybatis在tk单独使用, 所以生成工具有自己的单独的版本号 -->
+        <!--Mybatis 通用mapper tk单独使用，自己独有+自带版本号-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.5.13</version>
         </dependency>
-        <!-- generator -->
+        <!-- Mybatis Generator 自己独有+自带版本号-->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
             <version>1.4.2</version>
         </dependency>
-        <!-- 通用 mapper -->
+        <!--通用Mapper-->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper</artifactId>
         </dependency>
-        <!-- mysql8驱动 -->
+        <!--mysql8.0-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        <!-- persistence -->
+        <!--persistence-->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
         </dependency>
+        <!--hutool-->
         <dependency>
-            <!-- hutool -->
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
-        <!-- lombok -->
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- spring-boot-starter-test-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
-                    <groupId>org.iunit,vintage</groupId>
+                    <groupId>org.junit.vintage</groupId>
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
@@ -102,6 +99,7 @@
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.4.2</version>
                 <configuration>
+<!--                    我们好读取的配置文件 generatorConfig.xml   -->
                     <configurationFile>${basedir}/src/main/resources/generatorConfig.xml</configurationFile>
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>
@@ -121,7 +119,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
